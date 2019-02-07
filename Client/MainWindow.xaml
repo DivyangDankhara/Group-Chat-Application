@@ -1,0 +1,95 @@
+﻿<!--
+*	 FILE          : MainWindow.xaml
+*    PROJECT       : Assignment #4 Windwos and mobile programming
+*	 PROGRAMMER    : Divyangbhai Dankhara
+*    STUDENET NO.  : 8061566
+*	 FIRST VERSION : 2018-11-1
+*	 Description   : this file contain ui for chat.
+-->
+    <Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+
+        <!--here we define how many column we want in our grid-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="693.6"/>
+            <ColumnDefinition Width="100px" />
+        </Grid.ColumnDefinitions>
+
+        <!--here we define how many row we want in our grid-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+
+        <StatusBar Grid.Column="0" Grid.Row="0" Background="WhiteSmoke">
+            <StatusBarItem>
+                <TextBlock x:Name="serverAdd" Text="Server Address " FontSize="15" VerticalAlignment="Center"></TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBox x:Name="tbServerAdd" Height="25" Width="150" FontSize="15" VerticalAlignment="Center"></TextBox>
+            </StatusBarItem>
+
+            <StatusBarItem>
+                <TextBlock x:Name="User" Text="User Name " FontSize="15" VerticalAlignment="Center"></TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBox x:Name="tbUserName" Height="25" Width="150" FontSize="15" VerticalAlignment="Center"></TextBox>
+            </StatusBarItem>
+
+            <StatusBarItem>
+                <Button x:Name="btnConnect" Width="70" Height="30" Content="Connect" VerticalAlignment="Center" Click="btnConnect_Click"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Canvas x:Name="color" Height="35" Width="40" Background="Red" />
+            </StatusBarItem>
+        </StatusBar>
+
+
+        <!--<StatusBar Grid.Column="1" Grid.Row="0" Background="WhiteSmoke">
+            <StatusBarItem>
+                <TextBlock Text="Users" VerticalAlignment="Center" Width="100" FontSize="15" TextAlignment="Center" IsEnabled="False"/>
+            </StatusBarItem>
+        </StatusBar>-->
+
+        <StatusBar Grid.Column="0" Grid.Row="1" Background="WhiteSmoke">
+            <StatusBarItem>
+                <ListView x:Name="lvRecieve" Width="693" Height="330.4" VerticalAlignment="Center" FontSize="15"  IsEnabled="False"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- this area used to show the name of the which is connected to the server
+        <StatusBar Grid.Column="1" Grid.Row="1">
+            <StatusBarItem>
+                <ListView Height="330.4" Width="100" IsEnabled="False"/>
+            </StatusBarItem>
+        </StatusBar>-->
+
+
+
+        <!--this is the text area where we write the message which we want to send to the other user-->
+        <StatusBar Grid.Column="0" Grid.Row="2" Background="WhiteSmoke">
+            <StatusBarItem>
+                <TextBox x:Name="tbSend" Height="50" Width="693" FontSize="15" />
+            </StatusBarItem>
+        </StatusBar>
+
+
+        <!--this is the button which will allow us to send the the message to the server-->
+        <StatusBar Grid.Column="1" Grid.Row="2" Background="WhiteSmoke">
+            <StatusBarItem>
+                <Button x:Name="btnSend" Width="80" VerticalAlignment="Center" Content="Send" FontSize="15" Height="30" IsEnabled="False" Click="btnSend_Click"/>
+            </StatusBarItem>
+        </StatusBar>
+
+
+    </Grid>
+</Window>
